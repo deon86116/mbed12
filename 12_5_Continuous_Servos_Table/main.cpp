@@ -50,7 +50,7 @@ int main() {
     pc.baud(9600);
 
 
-    encoder_ticker.attach(&encoder_control, .01);
+    encoder_ticker.attach(&encoder_control, .001);
 
 
     servo.period(.02);
