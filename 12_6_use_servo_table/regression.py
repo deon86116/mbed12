@@ -15,7 +15,7 @@ x = np.linspace(0, end, num=n) # signal vector
 
 #TODO: revise this array to your results
 
-y = np.array([0.000, 5.263, 10.367, 12.919 , 13.797,14.514 ]) # speed vector
+y = np.array([0.000, 5.343, 10.128, 12.840 , 14.036, 14.036 ]) # speed vector
 
 
 z = np.polyfit(x, y, 2) # Least squares polynomial fit, and return the coefficients.
