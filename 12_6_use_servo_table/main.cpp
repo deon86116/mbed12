@@ -23,9 +23,9 @@ volatile int last;
 
 void servo_control(int speed){
 
-    if (speed > 70.433620)       speed = 70.433620;
+    if (speed > 200)       speed = 200;
 
-    else if (speed <-70.433620) speed = -70.433620;
+    else if (speed <-200) speed = -200;
 
 
     servo=(CENTER_BASE + speed)/20000.0f;
@@ -62,7 +62,7 @@ int main() {
 
     //TODO: revise this value according to your result
 
-    servo_control(37.222);
+    servo_control(-23.589);
 
 
     steps = 0;
@@ -70,16 +70,23 @@ int main() {
     t.reset();
 
     t.start();
-
-
-    wait(8);
-
-
+     wait(5);
     float time = t.read();
-
 
     pc.printf("%1.3f\r\n", (float)steps*6.5*3.14/32/time);
 
+    
+    servo_control(42.577);
+    steps = 0;
+
+    t.reset();
+
+    t.start();
+    wait(5);
+    time = t.read();
+
+    pc.printf("%1.3f\r\n", (float)steps*6.5*3.14/32/time);
+    
     }
 
 }
